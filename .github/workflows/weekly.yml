@@ -1,0 +1,43 @@
+name: Weekly dashboard refresh
+
+on:
+  schedule:
+    # 14:00 UTC every Wednesday = 9:00 AM US Central (Daylight). Adjust to '0 15 * * 3' after Nov DST for 9 AM CST.
+    - cron: '0 14 * * 3'
+  workflow_dispatch: {}   # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write          # allows the built-in token to commit index.html
+
+concurrency:
+  group: weekly-dashboard
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build & encrypt dashboard
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # optional; enables weekly data refresh
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}       # optional; set to a model your key can use
+        run: node generate.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html data.json
+          if git diff --cached --quiet; then
+            echo "No changes this week."
+          else
+            git commit -m "Weekly dashboard refresh ($(date -u +%Y-%m-%d))"
+            git push
+          fi
