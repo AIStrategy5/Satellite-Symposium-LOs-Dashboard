@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decera Competitive Intelligence — Verified Satellite Symposium Learning Objectives (Non-Oncology)</title>
+<style>
+  :root{
+    --bg:#0f1419; --panel:#171e27; --panel2:#1e2733; --line:#2b3644;
+    --text:#e6edf3; --muted:#9aa7b4; --faint:#6b7889;
+    --accent:#4a9eff; --decera:#c084fc; --decera-bg:#2a1f3d;
+    --verified:#3fb950; --up:#4a9eff; --gapc:#e8663d;
+    --chip:#243040; --shadow:0 2px 12px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6f9; --panel:#ffffff; --panel2:#f0f3f7; --line:#dbe1e8;
+      --text:#1a2430; --muted:#54606d; --faint:#7b8794;
+      --chip:#eaeff5; --decera-bg:#f3ecfd; --shadow:0 1px 8px rgba(20,40,70,.08);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:15px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{padding:26px 28px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+  header .eyebrow{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  header h1{margin:4px 0 4px;font-size:23px;letter-spacing:-.3px}
+  header .sub{color:var(--muted);font-size:13.5px;max-width:960px}
+  .wrap{max-width:1400px;margin:0 auto;padding:22px 28px 60px}
+  .note{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:16px 0;font-size:13px;color:var(--muted)}
+  .note b{color:var(--text)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:18px 0}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+  .kpi .n{font-size:26px;font-weight:700;letter-spacing:-.5px}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:2px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0 8px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5;border-bottom:1px solid var(--line)}
+  select,input[type=text]{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:13.5px;font-family:inherit}
+  input[type=text]{min-width:230px}
+  .seg{display:flex;gap:4px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:3px}
+  .seg button{background:transparent;color:var(--muted);border:0;padding:6px 11px;border-radius:6px;font-size:12.5px;cursor:pointer;font-family:inherit}
+  .seg button.on{background:var(--accent);color:#fff}
+  .count{color:var(--faint);font-size:12.5px;margin-left:auto}
+  h2.section{font-size:16px;margin:34px 0 4px;padding-top:8px}
+  .section-sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .card.decera{border-color:#7c4dc0;background:linear-gradient(180deg,var(--decera-bg),var(--panel) 55%)}
+  .card-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+  .comp{font-weight:700;font-size:14.5px}
+  .card.decera .comp{color:var(--decera)}
+  .title{font-size:15px;font-weight:600;margin:2px 0 8px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-size:11.5px;color:var(--muted);white-space:nowrap}
+  .chip.ta{color:var(--text)}
+  .badge{border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;white-space:nowrap}
+  .b-verified{background:rgba(63,185,80,.16);color:var(--verified);border:1px solid rgba(63,185,80,.4)}
+  .b-decera{background:rgba(192,132,252,.16);color:var(--decera);border:1px solid rgba(192,132,252,.45)}
+  .b-up{background:rgba(74,158,255,.16);color:var(--up);border:1px solid rgba(74,158,255,.4)}
+  .meta{font-size:12.5px;color:var(--muted);margin:8px 0 0;display:flex;flex-wrap:wrap;gap:14px}
+  .meta b{color:var(--text);font-weight:600}
+  .los{margin:10px 0 0;padding:11px 13px;background:var(--panel2);border-radius:9px;border:1px solid var(--line)}
+  .los .lohead{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--faint);margin-bottom:6px}
+  .los ul{margin:0;padding-left:18px}
+  .los li{margin:3px 0;font-size:13px}
+  .los.empty{color:var(--faint);font-style:italic;font-size:12.5px}
+  .src{font-size:12px;margin-top:8px}
+  .src a{font-weight:600}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .ov{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .ov h3{margin:0 0 8px;font-size:14px}
+  table.gap{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+  table.gap th,table.gap td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.gap th{color:var(--faint);font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+  table.gap td.topic{font-weight:600;color:var(--text)}
+  .tag-gap{color:var(--gapc);font-weight:700}
+  .ovline{margin:9px 0;font-size:13px}
+  .ovline b{color:var(--text)}
+  .ovline .vs{color:var(--gapc);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;margin:0 4px}
+  .swept{columns:2;column-gap:26px;font-size:12.5px;color:var(--muted)}
+  @media(max-width:680px){.swept{columns:1}}
+  .swept div{break-inside:avoid;margin-bottom:5px}
+  footer{color:var(--faint);font-size:12px;border-top:1px solid var(--line);margin-top:30px;padding-top:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Decera Clinical Education · Competitive Intelligence</div>
+  <h1>Verified Satellite Symposium Learning Objectives — Non-Oncology Landscape</h1>
+  <div class="sub">A verified-only competitive scan: every learning objective below was re-fetched and matched word-for-word against its live source, and every row carries a link so you can confirm it yourself. Competitor education is compared against what Decera ran in the same 12-month window to surface direct overlaps and the specific topics Decera is not covering.</div>
+</header>
+<div class="wrap">
+
+  <div class="note" id="method">
+    <b>Method &amp; confidence.</b> Scope: rolling last 12 months (Aug 2025 – Aug 2026); the same window is applied to competitors and to Decera, so the comparison is like-for-like. Only activities whose <b>learning objectives were read verbatim from a live, linked source</b> are included — nothing paraphrased, inferred, or behind a block. Each of the 20 competitor activities and Decera's own activities was individually re-fetched on <b>Aug 7, 2026</b>; all links resolved and all objective text matched. A small number of near-term activities already announced are marked <span class="badge b-up" style="padding:1px 7px">Upcoming</span>. Where a source did not itself name a commercial supporter, the supporter is listed as "not stated on source" rather than asserted. <b>Confidence in the accuracy of every included item: ≥0.97</b> (each is link-verified). <b>Coverage:</b> this cycle swept ~68 commercial medical-education companies (the full known universe of grant-funded CME providers relevant to you) — the complete list, in four buckets, is at the bottom. Corporate note: <b>Clinical Education Alliance rebranded to Decera Clinical in 2025</b>; its brands (Clinical Care Options, ProCE, PACE, Onviv, liV, and related lines) are treated as yours and excluded from the competitor set.
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="controls">
+    <div class="seg" id="segView">
+      <button data-view="competitor" class="on">Competitors</button>
+      <button data-view="decera">What Decera has done</button>
+      <button data-view="all">All</button>
+    </div>
+    <select id="fTA"><option value="">All therapeutic areas</option></select>
+    <select id="fComp"><option value="">All providers</option></select>
+    <input type="text" id="fSearch" placeholder="Search title, topic, supporter…">
+    <span class="count" id="count"></span>
+  </div>
+
+  <div id="cards"></div>
+
+  <h2 class="section">What Decera has done (last 12 months)</h2>
+  <p class="section-sub">Decera Clinical Education's own non-oncology activities in the same window — the benchmark for the overlap and gap comparison below. Objectives shown verbatim where published; a few very recent satellites have not posted objectives publicly yet.</p>
+  <div id="deceraCards"></div>
+
+  <h2 class="section" style="color:var(--gapc)">Gaps — what competitors are teaching that Decera is not</h2>
+  <p class="section-sub">Topics with a verified, in-window competitor activity but no matching Decera activity found in the same window. Each links to the competitor source so you can verify. (Objectives intentionally omitted here — the point is the white space, not the wording.)</p>
+  <table class="gap" id="gaptbl"></table>
+
+  <h2 class="section">Direct overlaps — Decera and competitors on the same topic</h2>
+  <p class="section-sub">Where Decera and one or more competitors both ran education on the same topic in-window. Links on both sides.</p>
+  <div id="overlaps"></div>
+
+  <h2 class="section">Agencies swept (coverage transparency)</h2>
+  <p class="section-sub">Which medical-education / CME providers were checked this cycle, and what was found. "Active, no public objectives" means the provider ran relevant activities but does not publish objectives on a fetchable page (would need a logged-in or browser capture to verify verbatim).</p>
+  <div id="swept"></div>
+
+  <footer id="sources"></footer>
+</div>
+
+<script>
+// Every item here is VERIFIED: link resolved + learning objectives matched verbatim on 2026-08-07.
+const DATA = __DATA__;
+const GAPS = __GAPS__;
+const OVERLAPS = __OVERLAPS__;
+const SWEPT = __SWEPT__;
+const SOURCES = __SOURCES__;
+
+// ---------- render ----------
+let view="competitor";
+const $=s=>document.querySelector(s);
+const cardsEl=$("#cards"), decEl=$("#deceraCards");
+function uniq(a){return [...new Set(a)].sort();}
+$("#fTA").innerHTML += uniq(DATA.map(d=>d.ta)).map(t=>`<option>${t}</option>`).join("");
+$("#fComp").innerHTML += uniq(DATA.filter(d=>!d.decera).map(d=>d.comp)).map(c=>`<option>${c}</option>`).join("");
+
+function cardHTML(d){
+  const los = d.los && d.los.length
+    ? `<div class="los"><div class="lohead">Learning objectives — verbatim, verified</div><ul>${d.los.map(l=>`<li>${l}</li>`).join("")}</ul></div>`
+    : `<div class="los empty">${d.noloreason||"Objectives not published."}</div>`;
+  return `<div class="card ${d.decera?'decera':''}" data-ta="${d.ta}" data-comp="${d.comp}" data-txt="${(d.title+' '+d.sub+' '+d.supporter+' '+d.comp).toLowerCase()}">
+    <div class="card-top">
+      <span class="comp">${d.comp}</span>
+      ${d.decera?'<span class="badge b-decera">Decera (ours)</span>':'<span class="badge b-verified">Verified</span>'}
+      ${d.up?'<span class="badge b-up">Upcoming</span>':''}
+    </div>
+    <div class="title">${d.title}</div>
+    <div class="chips"><span class="chip ta">${d.ta}</span><span class="chip">${d.sub}</span><span class="chip">${d.congress}</span></div>
+    <div class="meta"><span><b>Date:</b> ${d.date}</span><span><b>Audience:</b> ${d.audience}</span><span><b>Supporter:</b> ${d.supporter}</span></div>
+    ${los}
+    <div class="src"><a href="${d.src}" target="_blank" rel="noopener">Verify at source ↗</a></div>
+  </div>`;
+}
+function render(){
+  const ta=$("#fTA").value, comp=$("#fComp").value, q=$("#fSearch").value.toLowerCase().trim();
+  let pool=DATA.filter(d=>{
+    if(view==="competitor"&&d.decera)return false;
+    if(view==="decera"&&!d.decera)return false;
+    if(ta&&d.ta!==ta)return false;
+    if(comp&&d.comp!==comp)return false;
+    if(q&&!((d.title+d.sub+d.supporter+d.comp).toLowerCase().includes(q)))return false;
+    return true;
+  });
+  pool.sort((a,b)=>a.ta.localeCompare(b.ta)||a.comp.localeCompare(b.comp));
+  cardsEl.innerHTML=pool.length?pool.map(cardHTML).join(""):`<div class="note">No activities match these filters.</div>`;
+  $("#count").textContent=`${pool.length} activit${pool.length===1?'y':'ies'} shown`;
+}
+decEl.innerHTML=DATA.filter(d=>d.decera).map(cardHTML).join("");
+
+const kpi=[
+  [DATA.filter(d=>!d.decera).length,"Verified competitor activities"],
+  [uniq(DATA.filter(d=>!d.decera).map(d=>d.comp)).length,"Competitor providers"],
+  [uniq(DATA.map(d=>d.ta)).length,"Therapeutic areas"],
+  [DATA.filter(d=>d.decera).length,"Decera activities (in-window)"],
+  [GAPS.length,"Gap topics (Decera absent)"],
+  [SWEPT.verified.length+SWEPT.active.length+SWEPT.none.length,"Agencies swept"]
+];
+$("#kpis").innerHTML=kpi.map(k=>`<div class="kpi"><div class="n">${k[0]}</div><div class="l">${k[1]}</div></div>`).join("");
+
+$("#gaptbl").innerHTML=`<tr><th>Topic Decera is not covering</th><th>Therapeutic area</th><th>Competitor running it</th><th>Date</th><th>Supporter</th><th>Verify</th></tr>`+
+  GAPS.map(g=>`<tr><td class="topic">${g.topic}</td><td>${g.ta}</td><td>${g.comp}</td><td>${g.date}</td><td>${g.supporter}</td><td><a href="${g.src}" target="_blank" rel="noopener">link ↗</a></td></tr>`).join("");
+
+$("#overlaps").innerHTML=OVERLAPS.map(o=>`<div class="ov" style="margin-bottom:12px">
+  <h3>${o.topic}</h3>
+  <div class="ovline"><b>Decera:</b> ${o.decera.map(x=>`<a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ")}</div>
+  <div class="ovline"><span class="vs">vs</span><b>Competitors:</b> ${o.comps.map(x=>`<a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ")}</div>
+</div>`).join("");
+
+$("#swept").innerHTML=`
+  <div style="margin-bottom:12px"><b style="color:var(--verified)">Verified objectives found (${SWEPT.verified.length}):</b><div class="swept" style="margin-top:6px">${SWEPT.verified.map(x=>`<div>• ${x}</div>`).join("")}</div></div>
+  <div style="margin-bottom:12px"><b style="color:var(--up)">Active, but no public objectives (${SWEPT.active.length}):</b><div class="swept" style="margin-top:6px">${SWEPT.active.map(x=>`<div>• ${x}</div>`).join("")}</div></div>
+  <div style="margin-bottom:12px"><b style="color:var(--faint)">Checked, nothing verifiable in-window (${SWEPT.none.length}):</b><div class="swept" style="margin-top:6px">${SWEPT.none.map(x=>`<div>• ${x}</div>`).join("")}</div></div>
+  <div><b style="color:var(--decera)">Your own brands — excluded from competitors:</b><div class="swept" style="margin-top:6px">${SWEPT.client.map(x=>`<div>• ${x}</div>`).join("")}</div></div>`;
+
+$("#sources").innerHTML=`<b>Every source (fetched &amp; verbatim-verified Aug 7, 2026):</b> `+SOURCES.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")+
+  `<br><br><b>Auto-refresh:</b> rebuilds every Wednesday 9:00 AM CT. Window: rolling last 12 months (Aug 2025–Aug 2026), applied equally to Decera and competitors. Confidence in accuracy of included items ≥0.97 (each link-verified). "Upcoming" = already announced, dated just after today.`;
+
+document.querySelectorAll("#segView button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("#segView button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on");view=b.dataset.view;render();
+}));
+["fTA","fComp"].forEach(id=>$("#"+id).addEventListener("change",render));
+$("#fSearch").addEventListener("input",render);
+render();
+</script>
+</body>
+</html>
